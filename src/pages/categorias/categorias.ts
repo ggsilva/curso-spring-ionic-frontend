@@ -2,6 +2,7 @@ import { API_CONFIG } from './../../config/api.config';
 import { CategoriaService } from './../../services/domain/categoria.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CategoriaDTO } from '../../models/categoria.dto';
 
 /**
  * Generated class for the CategoriasPage page.
@@ -32,9 +33,7 @@ export class CategoriasPage {
         response => {
           this.categorias = response;
         },
-        error => {
-          console.log(error);
-        });
+        error => {});
   }
 
 }
