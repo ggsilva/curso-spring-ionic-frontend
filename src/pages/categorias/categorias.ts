@@ -33,7 +33,7 @@ export class CategoriasPage {
         response => {
           this.categorias = response;
         },
-        error => {});
+        error => { });
   }
 
 }
