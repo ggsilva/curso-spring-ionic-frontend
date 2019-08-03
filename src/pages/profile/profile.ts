@@ -37,8 +37,12 @@ export class ProfilePage {
             this.cliente = response;
             this.getImageIfExists();
           },
-          error => { });
-
+          error => {
+            if (error.status == 403)
+              this.navCtrl.setRoot('HomePage');
+          });
+    else
+      this.navCtrl.setRoot('HomePage');
     console.log('ionViewDidLoad ProfilePage');
   }
 
@@ -48,7 +52,7 @@ export class ProfilePage {
         response => {
           this.cliente.imgUrl = `${API_CONFIG.bucketBaseUrl}/cp${this.cliente.id}.jpg`;
         },
-        error => {});
+        error => { });
   }
 
 }
