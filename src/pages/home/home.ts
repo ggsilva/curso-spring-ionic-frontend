@@ -37,7 +37,7 @@ export class HomePage {
           this.navCtrl.setRoot('CategoriasPage');
         },
         error => {
-          console.log('Erro do login')
+          this.auth.logout();
         })
   }
 
